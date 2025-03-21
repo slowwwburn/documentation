@@ -1,55 +1,60 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Embedded Finance",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#725AC1",
+		"light": "#9B84DA",
+		"dark": "#4B3A91"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/e.png",
   "navigation": {
     "tabs": [
+     
       {
-        "tab": "Guides",
-        "groups": [
+        "tab": "API Documentation",
+        "pages": [
           {
-            "group": "Get Started",
+            "group": "Getting Started",
+            "pages": ["api-reference/authentication"]
+          }, 
+          {
+            "group": "Business",
             "pages": [
-              "introduction",
-              "quickstart",
-              "development"
+              "api-reference/business",
+              "api-reference/playground/business/create_business",
+              "api-reference/playground/business/complete_business_kyb",
+              "api-reference/playground/business/create_business_customer",
+              "api-reference/playground/business/download_uploaded_file",
+              "api-reference/playground/business/unverified_business",
+              "api-reference/playground/business/update_docs_verification",
+              "api-reference/playground/business/upload_business_file",
+              "api-reference/playground/business/upload_customer_file",
+              "api-reference/playground/business/verify_director"
+
+          ]
+
+        
+          },
+
+          {
+            "group": "Customer",
+            "pages": [
+              "api-reference/customers",
+              "api-reference/playground/customer/profile_customer",
+              "api-reference/playground/customer/get_customer",
+              "api-reference/playground/customer/get_customers",
+              "api-reference/playground/customer/update_customer",
+              "api-reference/playground/customer/update_customer_type"
             ]
           },
           {
-            "group": "Essentials",
+            "group": "Wallet",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint Examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/wallets",
+              "api-reference/playground/wallet/create_wallet",
+              "api-reference/playground/wallet/get_wallet",
+              "api-reference/playground/wallet/get_wallets"
             ]
           }
         ]
@@ -76,9 +81,18 @@
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/e.png",
+    "dark": "/logo/e.png"
   },
+  "api": {
+  "mdx": {
+    "server": "https://mintlify.com/api",
+    "auth": {
+      "method": "key",
+      "name": "x-api-key"
+    }
+  }
+},
   "navbar": {
     "links": [
       {

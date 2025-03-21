@@ -1,0 +1,102 @@
+---
+title: "Create business"
+api: "POST /kyb/create-business"
+description: "This endpoint enables you to create a business under an organization."
+---
+
+# Create Business
+
+---
+
+## Request Parameters
+
+  <ParamField body= "orgId" type="string" required>
+    **Example:** '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+  </ParamField>
+
+  <ParamField body="title": type="string" required>
+  </ParamField>
+
+  <ParamField body="firstName" type="string" required>
+     **Example:** `John`
+</ParamField>
+
+  <ParamField body="lastName" type="string" required>
+     **Example:** `mark`
+</ParamField>
+
+  <ParamField body="dateOfBirth" type="string" required>
+   date of birth in `YYYY-MM-DD` format. **Example:**
+	`2025-03-21`
+  </ParamField>
+
+  <ParamField body="businessName" type="string" required>
+  </ParamField>
+
+  <ParamField body="email" type="string" required>
+   The business email. **Example:** "user@example.com"
+  </ParamField>
+
+  <ParamField body="phoneNumber" type="string" required>
+  </ParamField>
+
+  <ParamField body="industry" type="string" required>
+  </ParamField>
+
+  <ParamField body="country" type="string" required>
+  </ParamField>
+
+  <ParamField body="lga" type="string" required>
+  </ParamField>
+
+  <ParamField body="streetAddress" type="string" required>
+  </ParamField>
+
+  <ParamField body="state" type="string" required>
+  </ParamField>
+
+  <ParamField body="bvn" type="string" required>
+  </ParamField>
+
+  <ParamField body="nin" type="string" required>
+  </ParamField>
+
+  <ParamField body="businessType" type="string" required>
+    **Example:** "Sole Proprietorship"
+  </ParamField>
+
+  <ParamField body="businessRegistrationNumber" type="string" required>
+  </ParamField>
+
+  <ParamField body="taxIdentificationNumber" "string",
+  "dateOfIncorporation": "2025-03-21",
+  "bankCode": "string",
+  "accountName": "string",
+  "accountNumber": "string",
+  "postalCode": "string",
+  "webhook": "string",
+  "webhookSecret": "string"
+
+<ResponseExample>
+```json
+
+{
+  "id": "string",
+  "name": "string",
+  "isVerified": true,
+  "phone": "string",
+  "address": "string",
+  "state": "string",
+  "ownerId": "string",
+  "incorporated": true,
+  "employeeSize": 0,
+  "website": "string",
+  "lga": "string",
+  "street": "string",
+  "city": "string",
+  "type": "string",
+  "email": "string"
+}
+'''
+
+</ResponseExample>
