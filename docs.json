@@ -24,12 +24,12 @@
               "api-reference/business",
               "api-reference/playground/business/create_business",
               "api-reference/playground/business/complete_business_kyb",
-              "api-reference/playground/business/create_business_customer",
+              "api-reference/playground/business/customer/create_business_customer",
               "api-reference/playground/business/download_uploaded_file",
               "api-reference/playground/business/unverified_business",
               "api-reference/playground/business/update_docs_verification",
               "api-reference/playground/business/upload_business_file",
-              "api-reference/playground/business/upload_customer_file",
+              "api-reference/playground/business/customer/upload_customer_file",
               "api-reference/playground/business/verify_director"
 
           ]

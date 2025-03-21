@@ -1,5 +1,5 @@
 ---
-title: "Create business"
+title: verify director"
 api: "POST /kyb/verify-director"
 description: "This endpoint enables you to verify a business director."
 ---
@@ -7,6 +7,34 @@ description: "This endpoint enables you to verify a business director."
 # Verify Director
 
 ---
+
+##Request Parameters  
+
+<ParamField body= "businessId" type="string" required>
+    **Example:** "business_123456"
+</ParamField>
+
+<ParamField body="firstName" type="string" required>
+     **Example:** `John`
+</ParamField>
+
+<ParamField body="lastName" type="string" required>
+     **Example:** `mark`
+</ParamField>
+
+<ParamField body="dateOfBirth" type="string" required>
+   date of birth in `YYYY-MM-DD` format. **Example:**
+	`1998-01-01`
+  </ParamField>
+
+  <ParamField body="idNumber": type="string" required>
+    **Example:** "12345678901"
+</ParamField>
+
+   <ParamField body="idType" type="string" required>
+   **Example:** "NIN"
+</ParamField>
+
 
 <ResponseExample>
 ```json
