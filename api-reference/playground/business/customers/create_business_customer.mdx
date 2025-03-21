@@ -1,7 +1,7 @@
 ---
 title: "Create Business Customer"
 api: "POST /kyb/create-business-customer"
-description: "This endpoint enables you to create a business customer after successful kyb verification."
+description: "This endpoint enables you to create a business customer after successful KYB verification."
 ---
 
 # Create Business Customer
@@ -10,59 +10,57 @@ description: "This endpoint enables you to create a business customer after succ
 
 ## Request Parameters
 
-<ParamField body= "businessId" type="string" required>
+<ParamField body="businessId" type="string" required>
     **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
 
-  <ParamField body="orgId": type="string" required>
+<ParamField body="orgId" type="string" required>
     **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
 </ParamField>
 
-  <ParamField body="firstName" type="string" required>
-     **Example:** `John`
+<ParamField body="firstName" type="string" required>
+    **Example:** `John`
 </ParamField>
 
-  <ParamField body="lastName" type="string" required>
-     **Example:** `mark`
+<ParamField body="lastName" type="string" required>
+    **Example:** `Mark`
 </ParamField>
 
-   <ParamField body="phoneNumber" type="string" required>
+<ParamField body="phoneNumber" type="string" required>
 </ParamField>
 
-    <ParamField body="gender" type="string" required>
-  </ParamField>
-
-  <ParamField body="email" type="string" required>
-   The business email. **Example:** "user@example.com"
+<ParamField body="gender" type="string" required>
 </ParamField>
 
-  <ParamField body="dateOfBirth" type="string" required>
-   date of birth in `YYYY-MM-DD` format. **Example:**
-	`2025-03-21`
-  </ParamField>
+<ParamField body="email" type="string" required>
+    The business email. **Example:** "user@example.com"
+</ParamField>
 
-  <ParamField body="nin" type="string" required>
-  </ParamField>
+<ParamField body="dateOfBirth" type="string" required>
+    Date of birth in `YYYY-MM-DD` format.  
+    **Example:** `2025-03-21`
+</ParamField>
 
-  <ParamField body="bvn" type="string" required>
-  </ParamField>
+<ParamField body="nin" type="string" required>
+</ParamField>
 
-  <ParamField body="country" type="string" required>
-  </ParamField>
+<ParamField body="bvn" type="string" required>
+</ParamField>
 
-  <ParamField body="state" type="string" required>
-  </ParamField>
+<ParamField body="country" type="string" required>
+</ParamField>
 
-  <ParamField body="lga" type="string" required>
-  </ParamField>
+<ParamField body="state" type="string" required>
+</ParamField>
 
-  <ParamField body="streetAddress" type="string" required>
-  </ParamField>
+<ParamField body="lga" type="string" required>
+</ParamField>
 
+<ParamField body="streetAddress" type="string" required>
+</ParamField>
+
+## Response Example
 
 <ResponseExample>
 ```json
- {}
-'''
-
-</ResponseExample>
+{}
