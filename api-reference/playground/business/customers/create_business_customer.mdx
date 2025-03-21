@@ -1,11 +1,17 @@
 ---
 title: "Create Business Customer"
+<<<<<<< HEAD
 api: "POST /kyb/create-business-customer"
 description: "This endpoint enables you to create a business customer after successful KYB verification."
+=======
+description: "This endpoint enables you to create a business customer after successful kyb verification."
+api: "POST /kyb/create-business-customer"
+>>>>>>> 5a65b46 (complete busines onboarding formatting)
 ---
 
 # Create Business Customer
 
+<<<<<<< HEAD
 ---
 
 ## Request Parameters
@@ -64,3 +70,50 @@ description: "This endpoint enables you to create a business customer after succ
 <ResponseExample>
 ```json
 {}
+=======
+<ParamField body="businessId" type="string" required>
+	**Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+</ParamField>
+
+<ParamField body="orgId" type="string" required>
+	**Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+</ParamField>
+
+<ParamField body="firstName" type="string" required>
+	**Example:** `John`
+</ParamField>
+
+<ParamField body="lastName" type="string" required>
+	**Example:** `mark`
+</ParamField>
+
+<ParamField body="phoneNumber" type="string" required></ParamField>
+
+<ParamField body="gender" type="string" required></ParamField>
+
+<ParamField body="email" type="string" required>
+	The business email. **Example:** user@example.com
+</ParamField>
+
+<ParamField body="dateOfBirth" type="string" required>
+	date of birth in `YYYY-MM-DD` format. **Example:** `2025-03-21`
+</ParamField>
+
+<ParamField body="nin" type="string" required></ParamField>
+
+<ParamField body="bvn" type="string" required></ParamField>
+
+<ParamField body="country" type="string" required></ParamField>
+
+<ParamField body="state" type="string" required></ParamField>
+
+<ParamField body="lga" type="string" required></ParamField>
+
+<ParamField body="streetAddress" type="string" required></ParamField>
+
+<ResponseExample>
+```json
+ {}
+```
+</ResponseExample>
+>>>>>>> 5a65b46 (complete busines onboarding formatting)

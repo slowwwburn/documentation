@@ -1,11 +1,12 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Embedded Finance",
-  "colors": {
-    "primary": "#725AC1",
+	"$schema": "https://mintlify.com/docs.json",
+	"theme": "mint",
+	"name": "Embedded Finance",
+	"colors": {
+		"primary": "#725AC1",
 		"light": "#9B84DA",
 		"dark": "#4B3A91"
+<<<<<<< HEAD
   },
   "favicon": "/e.png",
   "navigation": {
@@ -113,3 +114,77 @@
     }
   }
 }
+=======
+	},
+	"favicon": "/e.png",
+	"navigation": {
+		"tabs": [
+			{
+				"tab": "API Documentation",
+				"pages": [
+					{
+						"group": "Getting Started",
+						"pages": ["api-reference/authentication"]
+					},
+					{
+						"group": "Business",
+						"pages": [
+							"api-reference/business",
+							"api-reference/playground/business/create_business",
+							"api-reference/playground/business/upload_business_file",
+							"api-reference/playground/business/verify_director",
+							"api-reference/playground/business/update_docs_verification",
+							"api-reference/playground/business/unverified_business",
+							{
+								"group": "Customer",
+								"pages": [
+									"api-reference/playground/business/customers/create_business_customer",
+									"api-reference/playground/business/customers/upload_customer_file"
+								]
+							}
+						]
+					}
+				]
+			}
+		],
+		"global": {
+			"anchors": [
+				
+			]
+		}
+	},
+	"logo": {
+		"light": "/logo/e.png",
+		"dark": "/logo/e.png"
+	},
+	"api": {
+		"mdx": {
+			"server": "https://mintlify.com/api",
+			"auth": {
+				"method": "key",
+				"name": "x-api-key"
+			}
+		}
+	},
+	"navbar": {
+		"links": [
+			{
+				"label": "Support",
+				"href": "mailto:hi@mintlify.com"
+			}
+		],
+		"primary": {
+			"type": "button",
+			"label": "Dashboard",
+			"href": "https://dashboard.mintlify.com"
+		}
+	},
+	"footer": {
+		"socials": {
+			"x": "https://x.com/mintlify",
+			"github": "https://github.com/mintlify",
+			"linkedin": "https://linkedin.com/company/mintlify"
+		}
+	}
+}
+>>>>>>> 5a65b46 (complete busines onboarding formatting)
