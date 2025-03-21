@@ -1,69 +1,11 @@
 ---
-<<<<<<< HEAD
-title: "Verify Director"
-=======
 title: "Verify Director Details"
->>>>>>> 5a65b46 (complete busines onboarding formatting)
 api: "POST /kyb/verify-director"
 description: "This endpoint enables you to verify a business director."
 ---
 
 # Verify Director
 
-<<<<<<< HEAD
----
-
-## Request Parameters  
-
-<ParamField body="businessId" type="string" required>
-    **Example:** "business_123456"
-</ParamField>
-
-<ParamField body="firstName" type="string" required>
-    **Example:** `John`
-</ParamField>
-
-<ParamField body="lastName" type="string" required>
-    **Example:** `Mark`
-</ParamField>
-
-<ParamField body="dateOfBirth" type="string" required>
-    Date of birth in `YYYY-MM-DD` format.  
-    **Example:** `1998-01-01`
-</ParamField>
-
-<ParamField body="idNumber" type="string" required>
-    **Example:** "12345678901"
-</ParamField>
-
-<ParamField body="idType" type="string" required>
-    **Example:** "NIN"
-</ParamField>
-
----
-
-## Response Example
-
-<ResponseExample>
-```json
-{
-    "id": "string",
-    "name": "string",
-    "isVerified": true,
-    "phone": "string",
-    "address": "string",
-    "state": "string",
-    "ownerId": "string",
-    "incorporated": true,
-    "employeeSize": 0,
-    "website": "string",
-    "lga": "string",
-    "street": "string",
-    "city": "string",
-    "type": "string",
-    "email": "string"
-}
-=======
 <ParamField body="businessId" type="string" required>
 	**Example:** "business_123456"
 </ParamField>
@@ -89,24 +31,25 @@ description: "This endpoint enables you to verify a business director."
 </ParamField>
 
 <ResponseExample>
-````json
+
+```json
 {
-"id": "string",
-"name": "string",
-"isVerified": true,
-"phone": "string",
-"address": "string",
-"state": "string",
-"ownerId": "string",
-"incorporated": true,
-"employeeSize": 0,
-"website": "string",
-"lga": "string",
-"street": "string",
-"city": "string",
-"type": "string",
-"email": "string"
-}```
+	"id": "string",
+	"name": "string",
+	"isVerified": true,
+	"phone": "string",
+	"address": "string",
+	"state": "string",
+	"ownerId": "string",
+	"incorporated": true,
+	"employeeSize": 0,
+	"website": "string",
+	"lga": "string",
+	"street": "string",
+	"city": "string",
+	"type": "string",
+	"email": "string"
+}
+```
 
 </ResponseExample>
->>>>>>> 5a65b46 (complete busines onboarding formatting)
