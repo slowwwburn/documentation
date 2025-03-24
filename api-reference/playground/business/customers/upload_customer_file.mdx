@@ -8,4 +8,9 @@ description: "This endpoint enables you to upload customers files."
 
 <ParamField body="customerId" type="string" required></ParamField>
 
-<ParamField body="fileType" type="string" required></ParamField>
+<ParamField body="fileType" type="string" required>
+	<li>**Example:** `PHOTO`</li>
+	<li>**Possible Values:** `PHOTO, UTILITY`</li>
+</ParamField>
+
+<ParamField body="file" type="file" required></ParamField>

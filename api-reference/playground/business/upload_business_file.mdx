@@ -6,5 +6,24 @@ description: "This endpoint enables you to upload files required for KYB verific
 
 # Upload Business File
 
+<Danger>
+  This API playground doesn't send files effectively, as such you would be unable to test the apis correctly on here.
+
+The provided request parameters below while correct are expected to be sent as multipart/form-data.
+
+</Danger>
+
+
 <ParamField body="businessId" type="string" required></ParamField>
-<ParamField body="fileType" type="string" required></ParamField>
+<ParamField body="fileType" type="string" required>
+	<ul>
+		<li>**Example:** `LIST_OF_DIRECTORS`</li>
+		<li>
+			**Possible Values:** `PROOF_OF_ADDRESS, MOU, OWNER_PASSPORT_PHOTO,
+			IDS_OF_DIRECTORS, CAC, UTILITY`
+		</li>
+	</ul>
+</ParamField>
+<ParamField body="File" type="file" required>
+	**Format:** `string($binary)`
+</ParamField>
