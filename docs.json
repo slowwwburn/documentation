@@ -27,7 +27,6 @@
 							"api-reference/playground/business/create_business",
 							"api-reference/playground/business/upload_business_file",
 							"api-reference/playground/business/verify_director",
-							"api-reference/playground/business/update_docs_verification",
 							{
 								"group": "Customer",
 								"pages": [
