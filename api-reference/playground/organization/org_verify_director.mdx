@@ -1,0 +1,57 @@
+---
+title: "Verify Organizations Director Details"
+api: "POST /org/verify-director"
+description: "This endpoint enables an Organization verify her director."
+---
+
+# Verify Director
+
+<ParamField body="orgId" type="string" required>
+	**Example:** "org_123456"
+</ParamField>
+
+<ParamField body="firstName" type="string" required>
+	**Example:** `John`
+</ParamField>
+
+<ParamField body="lastName" type="string" required>
+	**Example:** `Doe`
+</ParamField>
+
+<ParamField body="dateOfBirth" type="string" required>
+	date of birth in `YYYY-MM-DD` format. **Example:** `1998-01-01`
+</ParamField>
+
+<ParamField body="idNumber" type="string" required>
+	**Example:** `12345678901`
+</ParamField>
+
+<ParamField body="idType" type="string" required>
+	**Example:** `NIN` **Possible Values:** `BVN, NIN`
+</ParamField>
+
+<ResponseExample>
+
+```json
+
+{
+  "id": "string",
+  "name": "string",
+  "isVerified": true,
+  "phone": "string",
+  "address": "string",
+  "state": "string",
+  "ownerId": "string",
+  "incorporated": true,
+  "employeeSize": 0,
+  "website": "string",
+  "lga": "string",
+  "street": "string",
+  "city": "string",
+  "type": "string",
+  "email": "string"
+}
+
+```
+
+</ResponseExample>

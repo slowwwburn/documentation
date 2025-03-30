@@ -1,0 +1,25 @@
+---
+title: "Check Transaction Status"
+api: "Get /transaction/check-status"
+description: "This endpoint enables you to check the status of a transaction."
+---
+
+# Enquiry
+
+<ParamField body="orgId" type="string" required>
+	**Example:** 'f7dfc5ab-4a4e-4941-8114-7a140d4c03b2'
+</ParamField>
+
+<ParamField body="reference" type="string" required>
+	**Example:** '8500014591'
+</ParamField>
+
+<ResponseExample>
+
+```json
+{
+	 "data": {}
+}
+```
+
+</ResponseExample>

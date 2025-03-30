@@ -1,0 +1,56 @@
+---
+title: "Complete Organization KYB"
+api: "POST /org/complete-org-kyb"
+description: "This endpoint enables an Organization complete their KYB process."
+---
+
+# Complete Organization KYB
+
+<ParamField body="organizationId" type="string" required>
+    **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+</ParamField>
+
+<ParamField body="organizationOwnerId" type="string" required></ParamField>
+
+<ResponseExample>
+
+```json
+
+{
+  "status": true,
+  "orgId": "biz_123456",
+  "message": "KYB completed successfully",
+  "apiKeys": {
+    "testKeys": {
+      "publicKey": "string",
+      "privateKey": "string"
+    },
+    "liveKeys": {
+      "publicKey": "string",
+      "privateKey": "string"
+    }
+  },
+  "walletId": {
+    "accountNumber": "string",
+    "accountName": "string",
+    "currency": "string",
+    "ledgerAccountNumber": "string",
+    "balance": 0,
+    "walletId": "string",
+    "ownerId": "string",
+    "walletProviders": "string",
+    "createdAt": "string",
+    "status": "string",
+    "organizationId": "string",
+    "tag": "string",
+    "customerWalletId": "string",
+    "customerId": "string",
+    "nubanAccountNumber": "string",
+    "userId": "string",
+    "owner": "string"
+  }
+}
+
+```
+
+</ResponseExample>

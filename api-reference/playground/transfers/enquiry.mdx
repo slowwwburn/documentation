@@ -1,0 +1,34 @@
+---
+title: "Name Enquiry"
+api: "POST /enquiry"
+description: "This endpoint enables you to validate provided account number and return the name linked to the account."
+---
+
+# Enquiry
+
+<ParamField body="accountNumber" type="string" required>
+	**Example:** '8500014302'
+</ParamField>
+
+<ParamField body="bankCode" type="string" required>
+	**Example:** '000001'
+</ParamField>
+
+<ParamField body="sessionId" type="string" required>
+	**Example:** `session_123456789012345678901234`
+</ParamField>
+
+<ResponseExample>
+
+```json
+{
+	"data": {
+    "bankCode": "000001",
+    "accountNumber": "0123456789",
+    "accountName": "Money Market Account",
+    "sessionId": "session_123456789012345678901234"
+  }
+}
+```
+
+</ResponseExample>

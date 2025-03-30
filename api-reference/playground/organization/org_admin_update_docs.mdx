@@ -1,0 +1,30 @@
+---
+title: "Organization Admin Document update Verification"
+api: "Patch /org/admin/update-docs-Verification"
+description: "This endpoint enables an organization admin verify documents update."
+---
+
+# Verify Updated Documents
+
+<ParamField body="orgId" type="string" required>
+	**Example:** '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+</ParamField>
+
+<ParamField body="docsVerified" type="string" required>
+	**Example:** `true`
+</ParamField>
+
+<ParamField body="approvedId" type="string" required>
+</ParamField>
+
+
+<ResponseExample>
+
+```json
+{
+  "statusCode": "string",
+  "message": "string"
+}
+```
+
+</ResponseExample>

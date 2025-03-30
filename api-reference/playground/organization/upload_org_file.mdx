@@ -1,0 +1,25 @@
+---
+title: "Upload Organization File"
+api: "POST /org/upload-org-file"
+description: "This endpoint enables an Organization upload files required for KYB verification."
+---
+
+# Upload Organization File
+
+<ParamField body="File" type="file" required>
+	**Format:** `string($binary)`
+</ParamField>
+
+<ParamField body="OrgId" type="string" required>
+     **Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+</ParamField>
+
+<ParamField body="fileType" type="string" required>
+	<ul>
+		<li>**Example:** `LIST_OF_DIRECTORS`</li>
+		<li>
+			**Possible Values:** `PROOF_OF_ADDRESS, MOU, OWNER_PASSPORT_PHOTO,
+			IDS_OF_DIRECTORS, CAC, UTILITY`
+		</li>
+	</ul>
+</ParamField>

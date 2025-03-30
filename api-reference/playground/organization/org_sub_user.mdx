@@ -1,0 +1,52 @@
+---
+title: "Create Organization Sub User"
+api: "Get /org/create-org-sub-user"
+description: "This endpoint enables an organization create a Sub User."
+---
+
+# Create Organization Sub User
+
+<ParamField body="orgId" type="string" required>
+	**Example:** '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+</ParamField>
+
+<ParamField body="firstName" type="string" required>
+	**Example:** `John`
+</ParamField>
+
+<ParamField body="lastName" type="string" required>
+	**Example:** `Mark`
+</ParamField>
+
+<ParamField body="phoneNumber" type="string" required>
+    **Example:** `070177755654`
+</ParamField>
+
+<ParamField body="gender" type="string" required>
+</ParamField>
+
+<ParamField body="subUserType" type="string" required>
+	**Example:** `org_dev`
+</ParamField>
+
+<ParamField body="email" type="string" required>
+    **Example:** `sampleemail@email.com`
+</ParamField>
+
+<ParamField body="bvn" type="string" required>
+</ParamField>
+
+<ParamField body="nin" type="string" required>
+</ParamField>
+
+
+
+<ResponseExample>
+
+```json
+{
+	{}
+}
+```
+
+</ResponseExample>
