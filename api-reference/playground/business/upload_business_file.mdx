@@ -1,21 +1,28 @@
 ---
 title: "Upload Business File"
-api: "POST /upload-business-file"
+api: "POST /embedded/api/v1/upload-business-file"
 description: "This endpoint enables you to upload files required for KYB verification for a business."
 ---
 
 # Upload Business File
 
-<Danger>
-  This API playground doesn't send files effectively, as such you would be unable to test the apis correctly on here.
+<Warning>
+  This API playground doesn't send files effectively, as such you would be unable to test the apis directly on here.
 
-The provided request parameters below while correct are expected to be sent as multipart/form-data.
+The provided request parameters below while correct are expected to be sent as **multipart/form-data**.
 
-</Danger>
+</Warning>
 
-
+<ParamField
+	header="Content-Type"
+	type="string"
+	initialValue="multipart/form-data"
+	default="multipart/form-data"
+	required
+></ParamField>
 <ParamField body="businessId" type="string" required></ParamField>
 <ParamField body="fileType" type="string" required>
+	The type of document or image being uploaded.
 	<ul>
 		<li>**Example:** `LIST_OF_DIRECTORS`</li>
 		<li>
@@ -25,5 +32,171 @@ The provided request parameters below while correct are expected to be sent as m
 	</ul>
 </ParamField>
 <ParamField body="File" type="file" required>
-	**Format:** `string($binary)`
+	The document or image being uploaded.
+	<ul>
+		<li>**Format:** `string($binary)`</li>
+		<li>**Supported types:** `PNG, JPG, JPEG, PDF`</li>
+	</ul>
 </ParamField>
+
+<RequestExample>
+
+```bash cURL
+curl --location 'https://idbanc-kyb.azurewebsites.net/embedded/api/v1/upload-business-file' \
+--header 'Content-Type: multipart/form-data' \
+--form 'businessId="business_1234"' \
+--form 'fileType="LIST_OF_DIRECTORS"' \
+--form 'file=@"/path/to/file"'
+```
+
+```python Python
+import requests
+
+url = "https://idbanc-kyb.azurewebsites.net/embedded/api/v1/upload-business-file"
+
+payload = {'businessId': 'business_1234',
+'fileType': 'LIST_OF_DIRECTORS'}
+files=[
+  ('file',('Inspired - Marty Cagan.pdf',open('/Users/mac/Downloads/Inspired - Marty Cagan.pdf','rb'),'application/pdf'))
+]
+headers = {
+  'Content-Type': 'multipart/form-data'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload, files=files)
+
+print(response.text)
+```
+
+```javascript JavaScript
+const myHeaders = new Headers();
+myHeaders.append("Content-Type", "multipart/form-data");
+
+const formdata = new FormData();
+formdata.append("businessId", "business_1234");
+formdata.append("fileType", "LIST_OF_DIRECTORS");
+formdata.append("file", fileInput.files[0], "Inspired - Marty Cagan.pdf");
+
+const requestOptions = {
+	method: "POST",
+	headers: myHeaders,
+	body: formdata,
+	redirect: "follow",
+};
+
+fetch(
+	"https://idbanc-kyb.azurewebsites.net/embedded/api/v1/upload-business-file",
+	requestOptions
+)
+	.then((response) => response.json())
+	.then((response) => console.log(response))
+	.catch((error) => console.error(error));
+```
+
+```php PHP
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://idbanc-kyb.azurewebsites.net/embedded/api/v1/upload-business-file',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS => array('businessId' => 'business_1234','fileType' => 'LIST_OF_DIRECTORS','file'=> new CURLFILE('/Users/mac/Downloads/Inspired - Marty Cagan.pdf')),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: multipart/form-data'
+  ),
+));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+
+```
+
+```go Go
+package main
+
+import (
+  "fmt"
+  "bytes"
+  "mime/multipart"
+  "os"
+  "path/filepath"
+  "net/http"
+  "io"
+)
+
+func main() {
+
+  url := "https://idbanc-kyb.azurewebsites.net/embedded/api/v1/upload-business-file"
+  method := "POST"
+
+  payload := &bytes.Buffer{}
+  writer := multipart.NewWriter(payload)
+  _ = writer.WriteField("businessId", "business_1234")
+  _ = writer.WriteField("fileType", "LIST_OF_DIRECTORS")
+  file, errFile3 := os.Open("/Users/mac/Downloads/Inspired - Marty Cagan.pdf")
+  defer file.Close()
+  part3,
+         errFile3 := writer.CreateFormFile("file",filepath.Base("/Users/mac/Downloads/Inspired - Marty Cagan.pdf"))
+  _, errFile3 = io.Copy(part3, file)
+  if errFile3 != nil {
+    fmt.Println(errFile3)
+    return
+  }
+  err := writer.Close()
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+
+
+  client := &http.Client {
+  }
+  req, err := http.NewRequest(method, url, payload)
+
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  req.Header.Add("Content-Type", "multipart/form-data")
+
+  req.Header.Set("Content-Type", writer.FormDataContentType())
+  res, err := client.Do(req)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  defer res.Body.Close()
+
+  body, err := io.ReadAll(res.Body)
+  if err != nil {
+    fmt.Println(err)
+    return
+  }
+  fmt.Println(string(body))
+}
+```
+
+```java Java
+HttpResponse<String> response = Unirest.post("https://idbanc-kyb.azurewebsites.net/embedded/api/v1/upload-business-file")
+  .header("Content-Type", "multipart/form-data")
+  .field("businessId", "business_1234")
+  .field("fileType", "LIST_OF_DIRECTORS")
+  .field("file", new File("/Users/mac/Downloads/Inspired - Marty Cagan.pdf"))
+  .asString();
+
+```
+
+</RequestExample>

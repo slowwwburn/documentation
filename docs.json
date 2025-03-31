@@ -28,30 +28,16 @@
 							"api-reference/playground/business/upload_business_file",
 							"api-reference/playground/business/verify_director",
 							"api-reference/playground/business/business_transfer",
+							"api-reference/playground/business/get_businesses",
 							{
 								"group": "Customer",
 								"pages": [
 									"api-reference/customer",
 									"api-reference/playground/business/customers/create_business_customer",
-									"api-reference/playground/business/customers/upload_customer_file"
+									"api-reference/playground/business/customers/upload_customer_file",
+									"api-reference/playground/business/customers/get_business_customers"
 								]
 							}
-						]
-					},
-					{
-						"group": "Organization",
-						"pages": [
-							"api-reference/organization",
-							"api-reference/playground/organization/complete_org_kyb",
-							"api-reference/playground/organization/create_customer_wallet",
-							"api-reference/playground/organization/create_org_customer",
-							"api-reference/playground/organization/org_admin_get_unverified_orgs",
-							"api-reference/playground/organization/org_admin_update_docs",
-							"api-reference/playground/organization/org_sub_user",
-							"api-reference/playground/organization/get_org_transactions",
-							"api-reference/playground/organization/org_upload_customer_file",
-							"api-reference/playground/organization/org_verify_director",
-							"api-reference/playground/organization/upload_org_file"
 						]
 					},
 					{
@@ -59,10 +45,9 @@
 						"pages": [
 							"api-reference/transfer",
 							"api-reference/playground/transfers/check_transactions_status",
-							"api-reference/playground/transfers/enquiry"
+							"api-reference/playground/transfers/name_enquiry"
 						]
 					}
-							
 				]
 			}
 		],
@@ -76,7 +61,7 @@
 	},
 	"api": {
 		"mdx": {
-			"server": "https://idbanc-kyb.azurewebsites.net/embedded/api/v1",
+			"server": "https://idbanc-kyb.azurewebsites.net",
 			"auth": {}
 		}
 	},

@@ -1,0 +1,31 @@
+---
+title: "Get All Business Customers"
+api: "GET /embedded/api/v1/businesses/{businessId}/customers"
+description: "This endpoint enables you retrieve all customers a business has created"
+---
+
+# Get All Business Customers
+
+---
+
+<ParamField path="businessId" type="string" required>
+	The unique identifier of a business created by your organization. **Example:**
+	`299b88c8-b13c-4336-8ed6-2ff4ab3e7f49`
+</ParamField>
+
+<ParamField query="page" type="number" default="1">
+	The page number to be returned, **Example:** `1`
+</ParamField>
+
+<ParamField query="limit" type="number" default="10">
+	The limit of items to be returned per page, **Example:** `10`
+</ParamField>
+
+<ResponseExample>
+```json
+{
+ 
+}
+```
+
+</ResponseExample>
