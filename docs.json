@@ -28,13 +28,15 @@
 							"api-reference/playground/business/upload_business_file",
 							"api-reference/playground/business/verify_director",
 							"api-reference/playground/business/business_transfer",
+							"api-reference/playground/business/get_business",
 							"api-reference/playground/business/get_businesses",
 							{
-								"group": "Customer",
+								"group": "Business Customer",
 								"pages": [
 									"api-reference/customer",
 									"api-reference/playground/business/customers/create_business_customer",
 									"api-reference/playground/business/customers/upload_customer_file",
+									"api-reference/playground/business/customers/get_business_customer",
 									"api-reference/playground/business/customers/get_business_customers"
 								]
 							}

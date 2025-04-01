@@ -1,0 +1,81 @@
+---
+title: "Get A Business"
+api: "GET /embedded/api/v1/business/{businessId}"
+description: "This endpoint enables you retrieve the details of a particular business"
+---
+
+# Get A Business
+
+---
+
+<ParamField path="businessId" type="string" required>
+	The unique identifier of your organization, **Example:**
+	`299b88c8-b13c-4336-8ed6-2ff4ab3e7f49`
+</ParamField>
+
+<ResponseExample>
+```json
+{
+  "data": {
+    "id": "99cffa6d-89bc-4124-8cf0-6d415888ca72",
+    "orgId": "299b88c8-b13c-4336-8ed6-2ff4ab3e7f49",
+    "approver": null,
+    "walletId": null,
+    "userId": null,
+    "title": "string",
+    "firstName": "string",
+    "lastName": "string",
+    "dateOfBirth": "2007-03-20",
+    "businessName": "string",
+    "email": "leakn@mailinator.com",
+    "phoneNumber": "07075651000",
+    "industry": "TRANSPORTATION",
+    "country": "string",
+    "lga": "string",
+    "streetAddress": "string",
+    "state": "string",
+    "bvn": "12345678901",
+    "nin": "98765432109",
+    "businessType": "BUSINESS_NAME",
+    "businessRegistrationNumber": "RC00080",
+    "taxIdentificationNumber": "8000000553",
+    "dateOfIncorporation": "2025-03-23",
+    "ownerPassportPhoto": null,
+    "bankCode": "string",
+    "accountName": "string",
+    "accountNumber": "string",
+    "gomoneyId": null,
+    "postalCode": "string",
+    "docsUploaded": false,
+    "docsVerified": false,
+    "cacVerified": true,
+    "tinVerified": true,
+    "directorsVerified": false,
+    "fraudRiskStatusIsGood": false,
+    "status": "PENDING",
+    "webhook": "https://example.com/webhook",
+    "webhookSecret": "string",
+    "dateCreated": "2025-03-27T10:47:37.248Z",
+    "dateUpdated": "2025-03-27T10:47:37.248Z",
+    "directors": [],
+    "documents": {
+      "id": "9c3ba7eb-d514-4011-80b0-3478c7d6c04f",
+      "businessId": "99cffa6d-89bc-4124-8cf0-6d415888ca72",
+      "memart": null,
+      "proofOfAddress": null,
+      "listOfDirectors": null,
+      "ubo": null,
+      "mou": null,
+      "idsOfDirectors": null,
+      "cac": null,
+      "utility": null,
+      "dateCreated": "2025-03-27T10:47:37.283Z",
+      "dateUpdated": "2025-03-27T10:47:37.283Z"
+    }
+  },
+  "statusCode": 200,
+  "message": "Business retrieved successfully"
+}
+```
+
+</ResponseExample>
