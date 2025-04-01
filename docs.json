@@ -21,6 +21,14 @@
 						"pages": ["api-reference/authentication"]
 					},
 					{
+						"group": "Customer",
+						"pages": [
+							"api-reference/customer",
+							"api-reference/playground/customer/create_customer",
+							"api-reference/playground/customer/upload_customer_file"
+						]
+					},
+					{
 						"group": "Business",
 						"pages": [
 							"api-reference/business",
@@ -33,7 +41,7 @@
 							{
 								"group": "Business Customer",
 								"pages": [
-									"api-reference/customer",
+									"api-reference/business_customer",
 									"api-reference/playground/business/customers/create_business_customer",
 									"api-reference/playground/business/customers/upload_customer_file",
 									"api-reference/playground/business/customers/get_business_customer",
