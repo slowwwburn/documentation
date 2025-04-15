@@ -55,7 +55,8 @@
 						"pages": [
 							"api-reference/transfer",
 							"api-reference/playground/transfers/check_transactions_status",
-							"api-reference/playground/transfers/name_enquiry"
+							"api-reference/playground/transfers/name_enquiry",
+							"api-reference/playground/transfers/org_bulk_transfer"
 						]
 					}
 				]
