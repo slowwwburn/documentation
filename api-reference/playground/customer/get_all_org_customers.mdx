@@ -1,0 +1,32 @@
+---
+title: "Get all Organization Customers"
+api: "Get /embedded/api/v1/org/customers"
+description: "This endpoint enables an Organization get a paginated list of all customers."
+---
+
+# Get all Organization Customers
+
+<ParamField body="orgId" type="string" required>
+	**Example:** 'f7dfc5ab-4a4e-4941-8114-7a140d4c03b2'
+</ParamField>
+
+
+<ResponseExample>
+
+```json
+{
+  "data": {
+    "data": [
+      "string"
+    ],
+    "total": 0,
+    "page": 0,
+    "limit": 0,
+    "totalPages": 0
+  },
+  "statusCode": 200,
+  "message": "string"
+}
+```
+
+</ResponseExample>

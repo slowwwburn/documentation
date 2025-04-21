@@ -1,0 +1,21 @@
+---
+title: "Upgrade Customer's Tier"
+description: "This api enables you upgrade a customers tier directly under you as an organization"
+api: "POST /embedded/api/v1/org/customers/tier/{customerId}"
+---
+
+# Upgrade Customer's Tier
+
+<ParamField body="customerId" type="string" required>
+	**Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+</ParamField>
+
+
+<ResponseExample>
+```json
+{
+  "statusCode": 200,
+  "message": "Success"
+}
+```
+</ResponseExample>

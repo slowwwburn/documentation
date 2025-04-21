@@ -1,0 +1,52 @@
+---
+title: "Get an Organization Customer"
+api: "Get /embedded/api/v1/org/customers/{orgId}/{customerId}"
+description: "This endpoint enables an Organization get a details of a customer."
+---
+
+# Get an Organization Customer
+
+<ParamField body="orgId" type="string" required>
+	**Example:** 'f7dfc5ab-4a4e-4941-8114-7a140d4c03b2'
+</ParamField>
+
+<ParamField body="customerId" type="string" required>
+	**Example:** 'f7dfc5ab-4a4e-4941-8114-7a140d4c03b2'
+</ParamField>
+
+
+<ResponseExample>
+
+```json
+{
+  "data": {
+    "id": "string",
+    "orgId": "string",
+    "firstName": "string",
+    "lastName": "string",
+    "email": "string",
+    "phoneNumber": "string",
+    "gender": "string",
+    "dob": "string",
+    "nin": {},
+    "bvn": {},
+    "ninVerified": true,
+    "bvnVerified": true,
+    "photo": {},
+    "utility": {},
+    "country": "string",
+    "state": "string",
+    "lga": "string",
+    "streetAddress": "string",
+    "walletTier": "tier_0",
+    "utilityVerified": true,
+    "isActive": true,
+    "dateCreated": "2025-04-21T16:38:21.857Z",
+    "dateUpdated": "2025-04-21T16:38:21.857Z"
+  },
+  "statusCode": 200,
+  "message": "string"
+}
+```
+
+</ResponseExample>
