@@ -1,0 +1,109 @@
+---
+title: "Transaction History"
+description: "Retrieve transaction history for your organization, its customers, businesses, or business customers. The level of detail is determined by the query parameters provided."
+api: "GET /embedded/api/v1/org/transactions"
+---
+
+# Transaction History Endpoint
+
+Use this endpoint to fetch a detailed transaction history based on your organizational structure. You can query at the organization, customer, business, or wallet level.
+
+<ParamField query="orgId" type="string" required>
+	The unique identifier for the organization. **Example:**
+	`269fdb72-8c60-472e-a770-8a4e3bf0cdd9`
+</ParamField>
+
+<ParamField query="orgCustomerId" type="string" required>
+	The unique identifier for a customer under the organization. **Example:**
+	`269fdb72-8c60-472e-a770-8a4e3bf0cdd9`
+</ParamField>
+
+<ParamField query="orgBusinessId" type="string">
+	The unique identifier for a business under the organization. **Example:**
+	`dfad02ef-69e5-4997-8602-21693070178d`
+</ParamField>
+
+<ParamField query="orgBusinessCustomerId" type="string">
+	The unique identifier for a customer under a specific business. **Example:**
+	`dfad02ef-69e5-4997-8602-21693070178d`
+</ParamField>
+
+<ParamField query="walletId" type="string">
+	The unique identifier for a wallet under the organization or business.
+	**Example:** `dfad02ef-69e5-4997-8602-21693070178d`
+</ParamField>
+
+<ParamField query="status" type="string">
+	Transaction status code. **Example:** `000001`
+</ParamField>
+
+<ParamField query="startDate" type="string" required>
+	ISO-formatted start date of the transaction history range. **Example:**
+	`2023-01-01T00:00:00Z`
+</ParamField>
+
+<ParamField query="endDate" type="string" required>
+	ISO-formatted end date of the transaction history range. **Example:**
+	`2023-01-31T23:59:59Z`
+</ParamField>
+
+<ParamField query="page" type="string" required>
+	Page number for paginated results. **Example:** `1`
+</ParamField>
+
+<ParamField query="limit" type="string" required>
+	Maximum number of records per page. **Example:** `50`
+</ParamField>
+
+<ResponseExample>
+```json
+{
+	"data": [
+		{
+			"id": "dc2474ca-5d29-45cc-9b87-f751401c9654",
+			"orgId": "99ca2fa8-a7b5-4763-8d20-d7de69b33fd4",
+			"orgBusinessId": null,
+			"orgCustomerId": null,
+			"orgBusinessCustomerId": null,
+			"amount": 500,
+			"recipientAccountNumber": "8500014302",
+			"recipientAccountName": "HOME LOAN ACCOUNT",
+			"recipientBankCode": "000011",
+			"narration": "testing payout",
+			"reference": "session-267948383276017559557303050764",
+			"txnRef": null,
+			"sessionId": "267948383276017559557303050764",
+			"senderWalletId": "a5173ae1-d8f0-4b08-8f03-6a4386b3b4be",
+			"status": "Pending",
+			"senderName": "Embedded Tech",
+			"senderAccountNumber": "8500014759",
+			"transactionDate": "2025-04-18T21:07:52.640Z"
+		},
+		{
+			"id": "e461b4c1-f0b5-4e0c-aa41-d72ac840ff23",
+			"orgId": "99ca2fa8-a7b5-4763-8d20-d7de69b33fd4",
+			"orgBusinessId": null,
+			"orgCustomerId": null,
+			"orgBusinessCustomerId": null,
+			"amount": 500,
+			"recipientAccountNumber": "8500014356",
+			"recipientAccountName": "CHECKING ACCOUNT",
+			"recipientBankCode": "000059",
+			"narration": "testing payout",
+			"reference": "session-534807620800425254039813745281",
+			"txnRef": null,
+			"sessionId": "534807620800425254039813745281",
+			"senderWalletId": "a5173ae1-d8f0-4b08-8f03-6a4386b3b4be",
+			"status": "Pending",
+			"senderName": "Embedded Tech",
+			"senderAccountNumber": "8500014759",
+			"transactionDate": "2025-04-18T21:07:52.640Z"
+		}
+	],
+	"total": 28,
+	"page": "2",
+	"limit": "2",
+	"totalPages": 14
+}
+```
+<Response Example>
