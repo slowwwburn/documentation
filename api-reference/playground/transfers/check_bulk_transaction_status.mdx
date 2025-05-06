@@ -1,0 +1,60 @@
+---
+title: "Check Bulk Transaction Status"
+api: "Get /embedded/api/v1/transaction/bulk/check-status"
+description: "This endpoint enables you to check the status of a bulk transaction."
+---
+
+# Enquiry
+
+<ParamField query="orgId" type="string" required>
+	**Example:** `f7dfc5ab-4a4e-4941-8114-7a140d4c03b2`
+</ParamField>
+
+<ParamField query="bulkBatchId" type="string" required>
+	**Example:** `a4c774a8-939f-4945-951b-d4eb61f72e53`
+</ParamField>
+
+<ParamField query="page" type="number">
+	**Example:** `1`
+</ParamField>
+
+<ParamField query="limit" type="number">
+	**Example:** `10`
+</ParamField>
+
+<ResponseExample>
+
+```json
+{
+	"data": [
+		{
+			"id": "033f3ac7-108c-4f25-b2dc-9f09317d393e",
+			"reference": "55544433668",
+			"amount": 30000,
+			"status": "Successful",
+			"bulkBatchId": "a4c774a8-939f-4945-951b-d4eb61f72e53",
+			"bankCode": "999127",
+			"recipientAccountNumber": "8500014807",
+			"recipientAccountName": "LEKAN EMBEDDED",
+			"transactionDate": "2025-04-25T15:01:04.567Z"
+		},
+		{
+			"id": "e4bddda6-fb62-427a-aef8-3540667e09d7",
+			"reference": "009999000099",
+			"amount": 10000,
+			"status": "Successful",
+			"bulkBatchId": "a4c774a8-939f-4945-951b-d4eb61f72e53",
+			"bankCode": "999127",
+			"recipientAccountNumber": "8500014302",
+			"recipientAccountName": "WHO YOU",
+			"transactionDate": "2025-04-25T15:01:04.567Z"
+		}
+	],
+	"total": 2,
+	"page": 1,
+	"limit": 10,
+	"totalPages": 1
+}
+```
+
+</ResponseExample>
