@@ -1,25 +1,30 @@
 ---
-title: "Organization bulk transfer"
-api: "Post /embedded/api/v1/org/bulk-transfer"
-description: "This endpoint enables you to make bulk-transfer to various accounts."
+title: "Business bulk transfer"
+api: "Post /embedded/api/v1/business/bulk-transfer"
+description: "This endpoint enables your businesses make bulk-transfer to various accounts."
 ---
 
-# Organization bulk transfer"
+# Business bulk transfer
 
 <ParamField body="orgId" type="string" required>
 	The orgId of the Org initiating the transfer, **Example:**
 	`f7dfc5ab-4a4e-4941-8114-7a140d4c03b2`
 </ParamField>
 
+<ParamField body="businessId" type="string" required>
+	The unique identifier of the business initiating the transfer, **Example:**
+	`63632ad2-cb9b-4ab4-acfa-d71510e3de25`
+</ParamField>
+
 <ParamField body="generalNarration" type="string" required>
 	The narration for the bulk transfer, **Example:** `April Salary Payments`
 </ParamField>
 
-<ParamField body="accountName" type="string" required>
-	The name of the beneficiary account holder, ****Example:** `Vivian Vixen`
-</ParamField>
-
 <ParamField body="payouts" type="array" required>
+    <ParamField body="accountName" type="string" required>
+        The name of the beneficiary account holder, ****Example:** `Vivian Vixen`
+    </ParamField>
+
     <ParamField body="accountNumber" type="string" required>
         The beneficiary account number, **Example:** `8500014302`
     </ParamField>
