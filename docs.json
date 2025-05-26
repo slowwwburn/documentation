@@ -62,6 +62,10 @@
 							"api-reference/playground/transfers/check_transactions_status",
 							"api-reference/playground/transfers/check_bulk_transaction_status"
 						]
+					},
+					{
+						"group": "Webhooks",
+						"pages": ["api-reference/webhooks"]
 					}
 				]
 			}

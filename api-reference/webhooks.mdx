@@ -1,0 +1,140 @@
+---
+title: Webhooks
+description:
+---
+
+## Overview
+
+Webhooks allow your system to receive real-time updates from our platform. Instead of constantly checking (polling) for updates, we notify your system as soon as something happens — like a payment being made or a user completing a form.
+
+It’s like getting a text message when a delivery arrives, instead of refreshing the tracking page every 5 minutes!
+
+---
+
+## How It Works
+
+1. You give us a webhook URL (an API endpoint on your server).
+2. We send a `POST` request to that URL when a payment is made.
+3. You process the transaction data on your end — e.g., mark an order as paid.
+
+Here is simple example of a webhook URL
+
+```json
+app.post('/your-url/webhook', (req, res) => {
+  const event = req.body;
+    // Handle the event
+  res.status(200).send('OK');
+});
+```
+
+---
+
+## Sample Notification Payload
+
+Whenever a wallet account receives a credit, your webhook endpoint will receive a JSON payload as seen to the right ->
+
+#### Authenticating Webhook Notifications
+
+All authentic webhook notifications will include the following HTTP headers:
+
+```
+	"svix-id": "msg_p5jXN8AQM9LWM0D4loKWxJek"
+	"svix-timestamp": "1614265330"
+	"svix-signature": "v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE="
+```
+
+To **validate a webhook notification**, follow these steps:
+
+---
+
+#### ✅ Validation Steps
+
+1. **Extract the following values from the headers and request body:**
+
+   - `svix-id`
+   - `svix-timestamp`
+   - `svix-signature`
+   - Raw request body (unparsed string)
+
+2. **Construct the signed payload** by concatenating: `=svix_id.svix_timestamp.body`
+
+3. **Compute the HMAC-SHA256 hash** of the constructed payload using your **signing secret** as the key.
+
+4. **Base64-encode** the resulting hash.
+
+5. **Compare** the Base64-encoded hash with the signature in `svix-signature` (excluding the `v1,` prefix).
+
+---
+
+<RequestExample>
+```json Transfer Update
+{
+	"channels": null,
+	"eventId": null,
+	"event_type": "org_transfer_update",
+	"id": "msg_fddd5055cd6e",
+	{
+		"_type": "org_transfer_update",
+		"amount": 1000,
+		"bulkBatchId": "",
+		"businessCustomerId": "",
+		"businessId": "",
+		"eventId": "44d04cad-9cca-44c0-9dcc-fddd5055cd6e",
+		"message": "Transfer completed successfully",
+		"narration": "svixtest4",
+		"orgCustomerId": "",
+		"orgId": "269fdb72-8c60-472e-a770-8a4e3bf0cdd9",
+		"reason": "",
+		"receiver": {
+			"accountNumber": "8500015244",
+			"bankCode": "999127",
+			"name": "Ada developer"
+		},
+		"reference": "busiTrans133",
+		"sender": {
+			"accountNumber": "8500014429",
+			"name": "Tech Solutions Ltd"
+		},
+		"status": "success",
+		"timestamp": "2025-05-23T10:57:47.037Z",
+		"txId": "tr_4fcbe73d-5834-452f-8859-d907c3eea5fe"
+	}
+}
+```
+
+```json Successful Business Registration
+{
+	"channels": null,
+	"eventId": null,
+	"event_type": "org_kyb_approved",
+	"id": "msg_fddd50sasd6e",
+	{
+		"_type": "org_kyb_approved",
+		"orgId": "269fdb72-8c60-472e-a770-8a4e3bf0cdd9";
+		"businessId": "269fdb72-8c60-472e-a770-8a4e3bf0cdd9";
+		"status": "approved";
+		"message": "successful";
+		"timestamp": "2025-05-23T10:57:47.037Z";
+	}
+}
+```
+
+```json Rejected Business Registration
+{
+	"channels": null,
+	"eventId": null,
+	"event_type": "org_kyb_rejected",
+	"id": "msg_fddd50sasd6e",
+	{
+		"_type": "org_kyb_rejected",
+		"orgId": "269fdb72-8c60-472e-a770-8a4e3bf0cdd9";
+		"businessId": "269fdb72-8c60-472e-a770-8a4e3bf0cdd9";
+		"status": "rejected";
+		"reason": "director documents incomplete";
+		"message": "failed";
+		"timestamp": "2025-05-23T10:57:47.037Z";
+	}
+}
+```
+
+</RequestExample>
