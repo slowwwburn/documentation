@@ -10,7 +10,7 @@
 	"background": {
 		"color": { "light": "#F7F5FF", "dark": "#1B1523" }
 	},
-	"favicon": "/e.png",
+	"favicon": "/e.svg",
 	"navigation": {
 		"tabs": [
 			{
@@ -75,8 +75,8 @@
 		}
 	},
 	"logo": {
-		"light": "/logo/e.png",
-		"dark": "/logo/e.png"
+		"light": "/logo/e.svg",
+		"dark": "/logo/e.svg"
 	},
 	"api": {
 		"mdx": {
