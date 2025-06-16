@@ -1,0 +1,69 @@
+---
+title: "Get all virtual Wallets for an Organization"
+api: "GET /embedded/api/v1/wallets/org/wallets"
+description: "This endpoint enables an organization retrieve all details for all Wallets under the organization"
+---
+
+# Get All Virtual Wallets
+
+---
+
+<ParamField path="orgId" type="string" required>
+  The unique identifier of your organization.  
+  **Example:** `299b88c8-b13c-4336-8ed6-2ff4ab3e7f49`
+</ParamField>
+
+<ParamField query="label" type="string">
+  Filter by wallet label.
+</ParamField>
+
+<ParamField query="startDate" type="string">
+  Filter by start date (ISO 8601).  
+  **Example:** `2025-06-01`
+</ParamField>
+
+<ParamField query="endDate" type="string">
+  Filter by end date (ISO 8601).  
+  **Example:** `2025-06-30`
+</ParamField>
+
+<ParamField query="isFrozen" type="boolean">
+  Filter by frozen state.  
+  **Example:** `true`
+</ParamField>
+
+<ParamField query="page" type="number" default="1">
+  The page number to be returned.  
+  **Example:** `1`
+</ParamField>
+
+<ParamField query="limit" type="number" default="10">
+  The number of items per page.  
+  **Example:** `10`
+</ParamField>
+
+<ResponseExample>
+```json
+{
+  "data": [
+    {
+      "id": "string",
+      "orgId": "string",
+      "businessId": null,
+      "accountNumber": "string",
+      "bankCode": "string",
+      "type": "virtual",
+      "isFrozen": true,
+      "isExpired": false,
+      "status": false,
+      "expiresAt": null,
+      "reason": null,
+      "label": "string",
+      "accountName": "Account name / customLabel",
+      "dateCreated": "2025-06-16T10:35:22.234Z",
+      "dateUpdated": "2025-06-16T10:44:34.571Z"
+    }
+  ]
+}
+```
+</ResponseExample>

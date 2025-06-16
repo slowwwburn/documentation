@@ -1,0 +1,34 @@
+---
+title: "unfreeze a virtual wallet"
+description: "This endpoint enables an organizations's business unfreeze a virtual wallet"
+api: "POST /embedded/api/v1/wallets/org/business/virtual-wallet/unfreeze"
+---
+
+# Unfreeze a virtual wallet
+
+<ParamField body="orgId" type="string" required>
+	**Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+</ParamField>
+<ParamField body="businessId" type="string" required>
+	**Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+</ParamField>
+<ParamField body="walletId" type="string" required>
+	**Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+</ParamField>
+<ParamField body="reason" type="string" required>
+	**Example:** "For further checks"
+</ParamField>
+
+
+
+<ResponseExample>
+```json
+{
+  "data": {
+    "statusCode": 200,
+    "status": "success",
+    "message": "Unfreezing of Org Business Virtual Wallet is successful"
+  },
+}
+```
+</ResponseExample>

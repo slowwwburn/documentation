@@ -1,0 +1,39 @@
+---
+title: "Get a virtual wallet"
+api: "GET /embedded/api/v1/wallets/org/wallets/{id}"
+description: "This endpoint enables an organization's business retrieve the details of a particular wallet using the walletId"
+---
+
+# Get A Virtual wallet
+
+---
+
+<ParamField path="id" type="string" required>
+	The unique identifier of your organization, **Example:**
+	`299b88c8-b13c-4336-8ed6-2ff4ab3e7f49`
+</ParamField>
+
+<ResponseExample>
+```json
+{
+  "data": {
+    "id": "string",
+    "orgId": "string",
+    "businessId": null,
+    "accountNumber": "string",
+    "bankCode": "string",
+    "type": "virtual",
+    "isFrozen": true,
+    "isExpired": false,
+    "status": false,
+    "expiresAt": null,
+    "reason": null,
+    "label": "string",
+    "accountName": "Account name/ customLabel",
+    "dateCreated": "2025-06-16T10:35:22.234Z",
+    "dateUpdated": "2025-06-16T10:44:34.571Z"
+  }
+}
+```
+
+</ResponseExample>

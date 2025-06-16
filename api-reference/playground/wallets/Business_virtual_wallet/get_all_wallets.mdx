@@ -1,0 +1,75 @@
+---
+title: "Get all virtual Wallets for an Organization's Business"
+api: "GET /embedded/api/v1/wallets/org/wallets"
+description: "This endpoint enables an organization's business retrieve details for all the virtual wallets associated with the business."
+---
+
+# Get All Virtual Wallets (Organization Business)
+
+---
+
+<ParamField path="orgId" type="string" required>
+  The unique identifier of your organization.  
+  **Example:** `299b88c8-b13c-4336-8ed6-2ff4ab3e7f49`
+</ParamField>
+
+<ParamField path="businessId" type="string" required>
+  The unique identifier of your business unit under the organization.  
+  **Example:** `877a95dc-c524-41aa-9a3e-c8ef3b849a21`
+</ParamField>
+
+<ParamField query="label" type="string">
+  Filter wallets by label (custom name).  
+  **Example:** `Vendor Wallet`
+</ParamField>
+
+<ParamField query="startDate" type="string">
+  Filter wallets created after this date (ISO 8601 format).  
+  **Example:** `2025-06-01`
+</ParamField>
+
+<ParamField query="endDate" type="string">
+  Filter wallets created before this date (ISO 8601 format).  
+  **Example:** `2025-06-30`
+</ParamField>
+
+<ParamField query="isFrozen" type="boolean">
+  Filter wallets by frozen status.  
+  **Example:** `true`
+</ParamField>
+
+<ParamField query="page" type="number" default="1">
+  The page number of results to return.  
+  **Example:** `1`
+</ParamField>
+
+<ParamField query="limit" type="number" default="10">
+  The number of results to return per page.  
+  **Example:** `10`
+</ParamField>
+
+<ResponseExample>
+```json
+{
+  "data": [
+    {
+      "id": "string",
+      "orgId": "string",
+      "businessId": "string",
+      "accountNumber": "1234567890",
+      "bankCode": "999999",
+      "type": "virtual",
+      "isFrozen": true,
+      "isExpired": false,
+      "status": true,
+      "expiresAt": null,
+      "reason": null,
+      "label": "Vendor Payout Wallet",
+      "accountName": "Vendor Payout Wallet",
+      "dateCreated": "2025-06-16T10:35:22.234Z",
+      "dateUpdated": "2025-06-16T10:44:34.571Z"
+    }
+  ]
+}
+```
+</ResponseExample>

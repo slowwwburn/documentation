@@ -1,0 +1,40 @@
+---
+title: "Create virtual wallets"
+description: "This endpoint enables an organization's business create virtual wallets"
+api: "POST /embedded/api/v1/wallets/org/virtual-wallet"
+---
+
+# Create virtual wallets
+
+<ParamField body="orgId" type="string" required>
+	**Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+</ParamField>
+<ParamField body="customLabel" type="string" required>
+	**Example:** "virt"
+</ParamField>
+
+
+
+<ResponseExample>
+```json
+{
+  "data": {
+    "statusCode": 201,
+    "status": "success",
+    "data": {
+      "orgId": "string",
+      "accountNumber": "string",
+      "accountName": "Account name / customLabel",
+      "bankCode": "string",
+      "type": "virtual",
+      "balance": 0,
+      "currency": "NGN",
+      "isFrozen": false,
+      "walletId": "string",
+      "createdAt": "2025-06-16T10:35:22.234Z"
+    },
+    "message": "Org Virtual Wallet is created successfully"
+  },
+}
+```
+</ResponseExample>

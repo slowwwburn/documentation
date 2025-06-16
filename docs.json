@@ -64,6 +64,29 @@
 						]
 					},
 					{
+						"group": "Virtual Wallets",
+						"pages": [
+							"api-reference/wallets",
+							"api-reference/playground/wallets/create_virtual_wallets",
+							"api-reference/playground/wallets/freeze_a_wallet",
+							"api-reference/playground/wallets/get_a_wallet",
+							"api-reference/playground/wallets/get_all_wallets",
+							"api-reference/playground/wallets/unfreeze_a_wallet",
+						
+							{
+								"group": "Business virtual wallet",
+								"pages": [
+								"api-reference/business_virtual_wallets",
+								"api-reference/playground/wallets/Business_virtual_wallet/create_virtual_wallets",
+								"api-reference/playground/wallets/Business_virtual_wallet/freeze_a_wallet",
+								"api-reference/playground/wallets/Business_virtual_wallet/get_a_wallet",
+								"api-reference/playground/wallets/Business_virtual_wallet/get_all_wallets",
+								"api-reference/playground/wallets/Business_virtual_wallet/unfreeze_a_wallet"
+								]
+							}
+						]
+					},
+					{
 						"group": "Webhooks",
 						"pages": ["api-reference/webhooks"]
 					}
