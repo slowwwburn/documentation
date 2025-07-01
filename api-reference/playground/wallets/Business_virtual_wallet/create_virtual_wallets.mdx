@@ -1,18 +1,18 @@
 ---
-title: "Create virtual wallets"
+title: "Create org business virtual wallets"
 description: "This endpoint enables an organization's business create virtual wallets"
-api: "POST /embedded/api/v1/wallets/org/virtual-wallet"
+api: "POST /embedded/api/v1/wallets/business/virtual-wallet?orgId={orgId}"
 ---
 
-# Create virtual wallets
+# Create Organization's business virtual wallets
 
-<ParamField body="orgId" type="string" required>
-	**Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
-</ParamField>
+
 <ParamField body="customLabel" type="string" required>
 	**Example:** "virt"
 </ParamField>
-
+<ParamField body="businessId" type="string" required>
+	**Example:** "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+</ParamField>
 
 
 <ResponseExample>
@@ -23,6 +23,7 @@ api: "POST /embedded/api/v1/wallets/org/virtual-wallet"
     "status": "success",
     "data": {
       "orgId": "string",
+      "businessId": "string",
       "accountNumber": "string",
       "accountName": "Account name / customLabel",
       "bankCode": "string",
@@ -33,7 +34,7 @@ api: "POST /embedded/api/v1/wallets/org/virtual-wallet"
       "walletId": "string",
       "createdAt": "2025-06-16T10:35:22.234Z"
     },
-    "message": "Org Virtual Wallet is created successfully"
+    "message": "Org business virtual Wallet is created successfully"
   },
 }
 ```
