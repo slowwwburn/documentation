@@ -38,6 +38,7 @@
 							"api-reference/playground/business/business_transfer",
 							"api-reference/playground/business/get_business",
 							"api-reference/playground/business/get_businesses",
+							"api-reference/playground/business/get_fund_wallet_balance",
 							{
 								"group": "Business Customer",
 								"pages": [
@@ -72,6 +73,7 @@
 							"api-reference/playground/wallets/get_a_wallet",
 							"api-reference/playground/wallets/get_all_wallets",
 							"api-reference/playground/wallets/unfreeze_a_wallet",
+							"api-reference/playground/wallets/get_fund_wallet_balance",
 						
 							{
 								"group": "Business virtual wallet",
@@ -103,7 +105,7 @@
 	},
 	"api": {
 		"mdx": {
-			"server": "https://idbanc-kyb.azurewebsites.net",
+			"server": "https://api-dev-embedded.embedly.ng",
 			"auth": {}
 		}
 	},

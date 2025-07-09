@@ -1,0 +1,30 @@
+---
+title: "Get Fund wallet balance"
+api: "GET /embedded/api/v1/wallets/org/fund-wallet-balance"
+description: "This endpoint enables an organization retrieve the balance of their fund wallet"
+---
+
+# Get Fund wallet balance
+
+---
+
+<ParamField path="orgId" type="string" required>
+	The unique identifier of your organization, **Example:**
+	`299b88c8-b13c-4336-8ed6-2ff4ab3e7f49`
+</ParamField>
+
+<ResponseExample>
+```json
+{
+    "statusCode": 200,
+    "status": "success",
+    "data": {
+        "orgId": "269fdb72-8c60-472e-a770-8a4e3bf0cdd9",
+        "accountNumber": "8500014412",
+        "balance": 100000,
+        "ledgerBalance": 100000
+    }
+}
+```
+
+</ResponseExample>
