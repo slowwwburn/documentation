@@ -43,13 +43,32 @@ description: "This endpoint enables you to make bulk-transfer to various account
 </ParamField>
 
 <ResponseExample>
-```json
+```json Success
 {
     "statusCode": 200,
     "status": "success",
     "data": {
         "message": "Bulk payout is being processed",
         "bulkBatchId": "a852e318-478d-420f-9fd1-63fa0cbf03f6"
+    }
+}
+```
+```json Unauthorized
+{
+	"statusCode": 401,
+	"message": "No Authentication found!",
+	"error": "Unauthorized"
+}
+```
+```json Insufficient funds
+{
+    "data": {
+        "message": "Unable to complete transfer because you do not have sufficient funds.",
+        "error": {
+            "statusCode": 400,
+            "status": "error",
+            "message": "Unable to complete transfer because you do not have sufficient funds."
+        }
     }
 }
 ```

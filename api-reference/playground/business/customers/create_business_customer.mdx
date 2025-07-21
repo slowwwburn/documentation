@@ -47,7 +47,32 @@ api: "POST /embedded/api/v1/create-business-customer"
 <ParamField body="streetAddress" type="string" required></ParamField>
 
 <ResponseExample>
-	```json
-	{}
-	```
+```json Success
+{
+	"data": {
+		"customerId": "8e9051f5-4f0a-4ece-99b6-19d8d52b9479",
+		"message": "Customer created successfully!",
+		"status": true
+	},
+	"statusCode": 200,
+	"message": "Request successful"
+}
+```
+
+```json Bad Request
+{
+	"data": {},
+	"statusCode": 400,
+	"message": "Customer with this email already exist!"
+}
+```
+
+```json Unauthorized
+{
+	"statusCode": 401,
+	"message": "No Authentication found!",
+	"error": "Unauthorized"
+}
+```
+
 </ResponseExample>

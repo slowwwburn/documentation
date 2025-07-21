@@ -14,10 +14,47 @@ description: "This endpoint enables you retrieve details of a particular custome
 </ParamField>
 
 <ResponseExample>
-```json
+```json Success
 {
- 
+	"data": {
+		"id": "a6a7a570-5f67-4ec3-8651-5c30abc5b114",
+		"businessId": "630a9d26-a985-41fd-bdbe-3f76f4090658",
+		"orgId": "269fdb72-8c60-472e-a770-8a4e3bf0cdd9",
+		"firstName": "Bunch",
+		"lastName": "Dillon",
+		"email": "adah.olotu.cus2@gmail.com",
+		"phoneNumber": "07034712223",
+		"gender": "male",
+		"dob": "2025-03-14",
+		"nin": "63184876213",
+		"bvn": "95888168924",
+		"photo": "https://bucket-rev-fin-stack.s3.eu-west-1.amazonaws.com/a6a7a570-5f67-4ec3-8651-5c30abc5b114-PHOTO-588213ae-bac0-4f94-abf8-e90c3f8e1fc5.pdf",
+		"utility": null,
+		"walletId": "0e9735ee-67f1-4bb4-8681-fe5d9608056c",
+		"userId": "null",
+		"approver": null,
+		"gomoneyId": "9b2c593b-0c37-4fda-b501-aace365f4885",
+		"transactionPin": "111222",
+		"country": "Nigeria",
+		"state": "Lagos",
+		"lga": "Ikeja",
+		"streetAddress": "28 Dummy Close, Bigger Dummy",
+		"walletTier": "tier_1",
+		"idType": "BVN",
+		"utilityVerified": false,
+		"isActive": true,
+		"dateCreated": "2025-04-08T12:22:12.854Z",
+		"dateUpdated": "2025-04-08T12:23:58.592Z"
+	},
+	"statusCode": 200,
+	"message": "Customer retrieved successfully"
 }
 ```
-
+```json Unauthorized
+{
+	"statusCode": 401,
+	"message": "No Authentication found!",
+	"error": "Unauthorized"
+}
+```
 </ResponseExample>

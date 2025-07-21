@@ -24,7 +24,7 @@ description: "This endpoint enables you to check the status of a bulk transactio
 
 <ResponseExample>
 
-```json
+```json Success
 {
 	"data": [
 		{
@@ -54,6 +54,14 @@ description: "This endpoint enables you to check the status of a bulk transactio
 	"page": 1,
 	"limit": 10,
 	"totalPages": 1
+}
+```
+
+```json Unauthorized
+{
+	"statusCode": 401,
+	"message": "No Authentication found!",
+	"error": "Unauthorized"
 }
 ```
 

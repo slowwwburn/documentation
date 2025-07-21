@@ -22,10 +22,55 @@ description: "This endpoint enables you retrieve all customers a business has cr
 </ParamField>
 
 <ResponseExample>
-```json
+```json Success
 {
- 
+	"data": {
+		"data": [
+			{
+				"id": "8e9051f5-4f0a-4ece-99b6-19d8d52b9479",
+				"businessId": "dfad02ef-69e5-4997-8602-21693070178d",
+				"orgId": "94c337a6-4403-46aa-9aeb-bdc50ea6806d",
+				"firstName": "Doanald",
+				"lastName": "Blyth",
+				"email": "donald@mailnator.com",
+				"phoneNumber": "07070554421",
+				"gender": "male",
+				"dob": "1990-01-01",
+				"nin": "98765432138",
+				"bvn": "45678956472",
+				"photo": null,
+				"utility": null,
+				"walletId": null,
+				"userId": "null",
+				"approver": null,
+				"gomoneyId": null,
+				"transactionPin": "123456",
+				"country": "string",
+				"state": "string",
+				"lga": "string",
+				"streetAddress": "string",
+				"walletTier": "tier_1",
+				"idType": "BVN",
+				"utilityVerified": false,
+				"isActive": true,
+				"dateCreated": "2025-07-21T14:37:38.227Z",
+				"dateUpdated": "2025-07-21T14:37:38.227Z"
+			}
+		],
+		"total": 1,
+		"page": 1,
+		"limit": 10,
+		"totalPages": 1
+	},
+	"statusCode": 200,
+	"message": "Business customers retrieved successfully"
 }
 ```
-
+```json Unauthorized
+{
+	"statusCode": 401,
+	"message": "No Authentication found!",
+	"error": "Unauthorized"
+}
+```
 </ResponseExample>

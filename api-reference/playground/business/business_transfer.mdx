@@ -7,24 +7,25 @@ description: "This endpoint enables a business initiate a single payout transfer
 # Enquiry
 
 <ParamField body="accountNumber" type="string" required>
-	**Example:** '8500014302'
+	**Example:** `8500014302`
+</ParamField>
+
+<ParamField body="accountName" type="string" required>
+	**Example:** `John Doe`
 </ParamField>
 
 <ParamField body="amount" type="string" required>
-	**Example:** '1000'
+	**Example:** `1000`
 </ParamField>
 
-<ParamField body="businessId" type="string" required>
-</ParamField>
+<ParamField body="businessId" type="string" required></ParamField>
 
-<ParamField body="narration" type="string" required>
-</ParamField>
+<ParamField body="narration" type="string" required></ParamField>
 
-<ParamField body="reference" type="string" required>
-</ParamField>
+<ParamField body="reference" type="string" required></ParamField>
 
 <ParamField body="bankCode" type="string" required>
-	**Example:** '000001'
+	**Example:** `000001`
 </ParamField>
 
 <ParamField body="sessionId" type="string" required>
@@ -33,9 +34,39 @@ description: "This endpoint enables a business initiate a single payout transfer
 
 <ResponseExample>
 
-```json
+```json Success
 {
-	"data": {}
+	"data": {
+		"statusCode": 200,
+		"status": "pending",
+		"data": {
+			"reference": "k",
+			"txnId": "nip_08b8c7c1-07a2-43c2-849b-2bef8270b926"
+		}
+	},
+	"statusCode": 200,
+	"message": "Transfer transaction is successful"
+}
+```
+
+```json Insufficient Funds
+{
+	"data": {
+		"message": "Unable to complete transfer because you do not have sufficient funds.",
+		"error": {
+			"statusCode": 400,
+			"status": "error",
+			"message": "Unable to complete transfer because you do not have sufficient funds."
+		}
+	}
+}
+```
+
+```json Unauthorized
+{
+	"statusCode": 401,
+	"message": "No Authentication found!",
+	"error": "Unauthorized"
 }
 ```
 

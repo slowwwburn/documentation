@@ -83,23 +83,21 @@ description: "This endpoint enables you to create a business under your organiza
 
 <ResponseExample>
 
-```json
+```json Success
 {
-	"id": "string",
-	"name": "string",
-	"isVerified": true,
-	"phone": "string",
-	"address": "string",
-	"state": "string",
-	"ownerId": "string",
-	"incorporated": true,
-	"employeeSize": 0,
-	"website": "string",
-	"lga": "string",
-	"street": "string",
-	"city": "string",
-	"type": "string",
-	"email": "string"
+	"data": {
+		"businessCreated": true,
+		"businessId": "32c1a8f6-cbda-4d35-929f-99ccec85d9c8"
+	},
+	"statusCode": 200,
+	"message": "Business created successfully!"
+}
+```
+```json Unauthorized
+{
+	"statusCode": 401,
+	"message": "No Authentication found!",
+	"error": "Unauthorized"
 }
 ```
 

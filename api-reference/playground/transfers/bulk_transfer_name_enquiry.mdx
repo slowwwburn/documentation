@@ -21,7 +21,7 @@ api: "POST /embedded/api/v1/enquiry/bulk"
 </ParamField>
 </ParamField>
 <ResponseExample>
-```json
+```json 207 Multi Status
 {
     "results": [
         {
@@ -41,44 +41,15 @@ api: "POST /embedded/api/v1/enquiry/bulk"
                 "accountNumber": "8500014807",
                 "sessionId": "890596848111632629913731225500"
             }
-        },
-        {
-            "status": "success",
-            "data": {
-                "bankCode": "100022",
-                "accountName": "CHECKING ACCOUNT",
-                "accountNumber": "1930114519",
-                "sessionId": "035244691933745233386411442502"
-            }
-        },
-        {
-            "status": "success",
-            "data": {
-                "bankCode": "100022",
-                "accountName": "SAVINGS ACCOUNT",
-                "accountNumber": "8500014687",
-                "sessionId": "480865594700167777828970420943"
-            }
-        },
-        {
-            "status": "success",
-            "data": {
-                "bankCode": "000001",
-                "accountName": "CREDIT CARD ACCOUNT",
-                "accountNumber": "0867098293",
-                "sessionId": "354403440926218083701751346549"
-            }
-        },
-        {
-            "status": "success",
-            "data": {
-                "bankCode": "000001",
-                "accountName": "INVESTMENT ACCOUNT",
-                "accountNumber": "8500014687",
-                "sessionId": "084762020743030455639106190769"
-            }
         }
     ]
+}
+```
+```json Unauthorized
+{
+	"statusCode": 401,
+	"message": "No Authentication found!",
+	"error": "Unauthorized"
 }
 ```
 </ResponseExample>
